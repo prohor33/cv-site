@@ -10,7 +10,7 @@ v = 0.1;
 alpha_v = 0.001;
 alpha_dir = 1;
 prev_time_stamp = null;
-stopped = false;
+stopped = true;
 
 
 function step(timestamp) {
@@ -53,8 +53,43 @@ function step(timestamp) {
   requestAnimationFrame(step);
 }
 
-function onLoad() {
-  requestAnimationFrame(step);
+
+requestAnimationFrame(step);
+
+var cursorX;
+var cursorY;
+document.onmousemove = function(e) {
+  cursorX = e.pageX;
+  cursorY = e.pageY;
+
+  console.log("x: " + parseFloat(bug.style.left) + " " + parseFloat(cursorX));
+  console.log("y: " + parseFloat(bug.style.top) + " " + parseFloat(cursorY));
+  dx = parseFloat(bug.style.left) - parseFloat(cursorX);
+  dy = parseFloat(bug.style.top) - parseFloat(cursorY);
+  r = Math.sqrt(dx * dx + dy * dy);
+  console.log("r = " + r);
+  bug_r = 75;
+  if (r < bug_r) {
+    ladybugOnEnter();
+  }    
+  else {
+    ladybugOnLeave();
+  }
+}
+
+function headerOnMouseMove(e) {
+  // console.log("parseFloat(e.pageX) = " + parseFloat(cursorX));
+  dx = parseFloat(bug.style.left) - parseFloat(cursorX);
+  dy = parseFloat(bug.style.top) - parseFloat(cursorY);
+  r = Math.sqrt(dx * dx + dy * dy);
+  console.log("r = " + r);
+  bug_r = 75;
+  if (r < bug_r) {
+    ladybugOnEnter();
+  }    
+  else {
+    ladybugOnLeave();
+  }
 }
 
 function ladybugOnEnter(obj) {
@@ -62,6 +97,6 @@ function ladybugOnEnter(obj) {
 }
 
 function ladybugOnLeave(obj) {
-  stopped = false; 
+  stopped = true; 
 }
 

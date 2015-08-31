@@ -5,6 +5,7 @@
 	/*background-color: #F00;*/
 	height: 200px;
 	width: 200px;
+	z-index: -1;
 }
 
 #ladybug:hover { 
