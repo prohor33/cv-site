@@ -1,0 +1,12 @@
+#ladybug {
+	position: absolute;
+	background-image: url("../img/ladybug.png");
+	border-style: none;
+	/*background-color: #F00;*/
+	height: 200px;
+	width: 200px;
+}
+
+#ladybug:hover { 
+	background-image: url("../img/ladybug_looking.png");
+}
