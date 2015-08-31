@@ -10,7 +10,7 @@ v = 0.1;
 alpha_v = 0.001;
 alpha_dir = 1;
 prev_time_stamp = null;
-stopped = true;
+stopped = false;
 
 
 function step(timestamp) {
@@ -62,13 +62,17 @@ document.onmousemove = function(e) {
   cursorX = e.pageX;
   cursorY = e.pageY;
 
-  console.log("x: " + parseFloat(bug.style.left) + " " + parseFloat(cursorX));
-  console.log("y: " + parseFloat(bug.style.top) + " " + parseFloat(cursorY));
-  dx = parseFloat(bug.style.left) - parseFloat(cursorX);
-  dy = parseFloat(bug.style.top) - parseFloat(cursorY);
+  var rect = bug.getBoundingClientRect();
+  x = parseFloat(rect.left) + rect.width / 2.0;
+  y = parseFloat(rect.top) + rect.height / 2.0;
+
+  console.log("x: " + x + " " + parseFloat(cursorX));
+  console.log("y: " + y + " " + parseFloat(cursorY));
+  dx = x - parseFloat(cursorX);
+  dy = y - parseFloat(cursorY);
   r = Math.sqrt(dx * dx + dy * dy);
   console.log("r = " + r);
-  bug_r = 75;
+  bug_r = 67;
   if (r < bug_r) {
     ladybugOnEnter();
   }    
@@ -97,6 +101,6 @@ function ladybugOnEnter(obj) {
 }
 
 function ladybugOnLeave(obj) {
-  stopped = true; 
+  stopped = false; 
 }
 
