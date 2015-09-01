@@ -44,7 +44,7 @@ function step(timestamp) {
   forv_x = x + w / 2.0 + dir_x * forvard_r;
   forv_y = y + h / 2.0 + dir_y * forvard_r;
   to_the_corner = false;
-  if (forv_x < 0 || forv_y < 0 || forv_x > window.innerWidth || forv_y > window.innerHeight) {
+  if (forv_x < 0 || forv_y < 0 || forv_x > window.innerWidth || forv_y > document.innerHeight) {
     to_the_corner = true;
     console.log("to_the_corner");
   }
