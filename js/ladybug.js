@@ -1,8 +1,12 @@
 window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 
 bug = document.getElementById("ladybug");
-bug.style.left = "100px";
-bug.style.top = "100px";
+header = document.getElementById("header");
+test = document.getElementById("test");
+test2 = document.getElementById("test2");
+test3 = document.getElementById("test3");
+bug.style.left = "350px";
+bug.style.top = "10px";
 
 dir_x = 1.0;
 dir_y = 0.0;
@@ -24,6 +28,9 @@ function step(timestamp) {
 
   x = parseFloat(bug.style.left);
   y = parseFloat(bug.style.top);
+  var rect = bug.getBoundingClientRect();
+  w = bug.clientWidth;  // may not work somewhere?
+  h = bug.clientHeight;
 
   if (!stopped) {
     x += dir_x * v * dt;
@@ -35,7 +42,23 @@ function step(timestamp) {
 
   alpha = Math.atan2(dir_y, dir_x);
   // d_alpha = (Math.random() - 0.5) * alpha_v * dt;
-  if (Math.random() < 0.01)
+
+  forvard_r = 150;
+  forv_x = x + w / 2.0 + dir_x * forvard_r;
+  forv_y = y + h / 2.0 + dir_y * forvard_r;
+  to_the_corner = false;
+  if (forv_x < 0 || forv_y < 0 || forv_x > window.innerWidth || forv_y > window.innerHeight) {
+    to_the_corner = true;
+    console.log("to_the_corner");
+  }
+  test.style.left = forv_x + "px";
+  test.style.top = forv_y + "px";
+  test2.style.left = x + w / 2.0 + "px";
+  test2.style.top = y + h / 2.0 + "px";
+  test3.style.left = x + "px";
+  test3.style.top = y + "px";
+
+  if (!to_the_corner && Math.random() < 0.01)
     alpha_dir *= -1;
   d_alpha = alpha_v * dt * alpha_dir;
   if (!stopped)
@@ -64,30 +87,15 @@ document.onmousemove = function(e) {
 
   var rect = bug.getBoundingClientRect();
   x = parseFloat(rect.left) + rect.width / 2.0;
-  y = parseFloat(rect.top) + rect.height / 2.0;
+  y = parseFloat(rect.top) + rect.height / 2.0 + window.scrollY;
 
-  console.log("x: " + x + " " + parseFloat(cursorX));
-  console.log("y: " + y + " " + parseFloat(cursorY));
+  // console.log("x: " + x + " " + parseFloat(cursorX));
+  // console.log("y: " + y + " " + parseFloat(cursorY));
   dx = x - parseFloat(cursorX);
   dy = y - parseFloat(cursorY);
   r = Math.sqrt(dx * dx + dy * dy);
-  console.log("r = " + r);
+  // console.log("r = " + r);
   bug_r = 67;
-  if (r < bug_r) {
-    ladybugOnEnter();
-  }    
-  else {
-    ladybugOnLeave();
-  }
-}
-
-function headerOnMouseMove(e) {
-  // console.log("parseFloat(e.pageX) = " + parseFloat(cursorX));
-  dx = parseFloat(bug.style.left) - parseFloat(cursorX);
-  dy = parseFloat(bug.style.top) - parseFloat(cursorY);
-  r = Math.sqrt(dx * dx + dy * dy);
-  console.log("r = " + r);
-  bug_r = 75;
   if (r < bug_r) {
     ladybugOnEnter();
   }    
@@ -98,9 +106,12 @@ function headerOnMouseMove(e) {
 
 function ladybugOnEnter(obj) {
   stopped = true;
+  console.log("ladybugOnEnter");
+  bug.style.backgroundImage = 'url(img/ladybug_looking.gif)';
 }
 
 function ladybugOnLeave(obj) {
-  stopped = false; 
+  stopped = false;
+  bug.style.backgroundImage = 'url(img/ladybug.gif)';
 }
 
