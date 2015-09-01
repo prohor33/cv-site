@@ -3,8 +3,10 @@
 	background-image: url("../img/ladybug.gif");
 	border-style: none;
 	/*background-color: #F00;*/
-	height: 150px;
-	width: 150px;
+	height: 75px;
+	width: 75px;
+	background-repeat: no-repeat;
+  background-size: contain;
 	z-index: -1;
 }
 
@@ -12,23 +14,9 @@
 	background-image: url("../img/ladybug_looking.gif");
 }
 
-#test {
-	position: absolute;
-	background-color: #FF0000;
-	width: 10px;
-	height: 10px;
-}
-
-#test2 {
-	position: absolute;
-	background-color: #0000FF;
-	width: 10px;
-	height: 10px;
-}
-
-#test3 {
-	position: absolute;
-	background-color: #00FF00;
-	width: 10px;
-	height: 10px;
+@media(min-width:768px) {
+	#ladybug {
+		height: 150px;
+		width: 150px;
+	}
 }

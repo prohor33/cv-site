@@ -2,9 +2,6 @@ window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequest
 
 bug = document.getElementById("ladybug");
 header = document.getElementById("header");
-test = document.getElementById("test");
-test2 = document.getElementById("test2");
-test3 = document.getElementById("test3");
 bug.style.left = "350px";
 bug.style.top = "10px";
 
@@ -51,12 +48,6 @@ function step(timestamp) {
     to_the_corner = true;
     console.log("to_the_corner");
   }
-  test.style.left = forv_x + "px";
-  test.style.top = forv_y + "px";
-  test2.style.left = x + w / 2.0 + "px";
-  test2.style.top = y + h / 2.0 + "px";
-  test3.style.left = x + "px";
-  test3.style.top = y + "px";
 
   if (!to_the_corner && Math.random() < 0.01)
     alpha_dir *= -1;

@@ -1,0 +1,9 @@
+#grass {
+	position: absolute;
+	background-image: url("../img/grass.png");
+	border-style: none;
+	/*background-color: #F00;*/
+	height: 49px;
+	width: 100%;
+	z-index: -2;
+}
