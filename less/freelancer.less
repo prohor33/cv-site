@@ -73,44 +73,23 @@ hr.star-primary:after {
 
 header {
 	text-align: center;
-	background: @brand-success;
+	background: #ffffffff;
 	color: white;
 	.container {
-		padding-top: 100px;
-		padding-bottom: 50px;
+		padding-top: 160px;
+		padding-bottom: 145px;
 	}
 	img {
 		display: block;
 		margin: 0 auto 20px;
-	}
-	.intro-text {
-		.name {
-			display: block;
-			font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-			text-transform: uppercase;
-			font-weight: 700;
-			font-size: 2em;
-		}
-		.skills {
-			font-size: 1.25em;
-			font-weight: 300;
-		}
 	}
 }
 
 @media(min-width:768px) {
 	header {
 		.container {
-			padding-top: 200px;
-			padding-bottom: 100px;
-		}
-		.intro-text {
-			.name {
-				font-size: 4.75em;
-			}
-			.skills {
-				font-size: 1.75em;
-			}
+			padding-top: 320px;
+			padding-bottom: 290px;
 		}
 	}
 }
@@ -133,6 +112,24 @@ header {
 		.navbar-brand {
 	        font-size: 1.5em;
 	    }
+	}
+}
+
+#landing_name {
+	position: block;
+	background-image: url("../img/name.png");
+	width: 350px;
+	height: 75px;
+	margin-left: auto;
+  margin-right: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media(min-width:768px) {
+	#landing_name {
+		width: 700px;
+		height: 150px;
 	}
 }
 
@@ -167,7 +164,7 @@ section {
 }
 
 section.success {
-	background: @brand-success;
+	background: #ffffffff;
 	color: white;
 
     a,
