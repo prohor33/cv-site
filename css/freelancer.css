@@ -126,6 +126,9 @@ header img {
   background: -ms-linear-gradient(top, #b3b3b3 0, #b3b3b3 50%, #999999 50%, #999999 100%) #b3b3b3 no-repeat;
   background: -o-linear-gradient(top, #b3b3b3 0, #b3b3b3 50%, #999999 50%, #999999 100%) #b3b3b3 no-repeat;
   background: linear-gradient(top, #b3b3b3 0, #b3b3b3 50%, #999999 50%, #999999 100%) #b3b3b3 no-repeat;
+  -webkit-box-shadow: 0 1px 16px 8px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 0 1px 16px 8px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 1px 16px 8px rgba(0, 0, 0, 0.45);
 }
 .navbar a:focus {
   outline: none;
