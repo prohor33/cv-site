@@ -1,5 +1,6 @@
 body {
   overflow-x: hidden;
+  background-image: url("../img/back_sample.png");
 }
 p {
   font-size: 20px;
@@ -76,8 +77,8 @@ header img {
 }
 @media (min-width: 768px) {
   header .container {
-    padding-top: 320px;
-    padding-bottom: 290px;
+    padding-top: 330px;
+    padding-bottom: 300px;
   }
 }
 @media (min-width: 768px) {
@@ -138,6 +139,22 @@ header img {
 }
 .navbar .navbar-nav li a:focus {
   outline: none;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #80ff10;
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #80ff10;
+  background-color: #a5a5a5;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #80ff10;
+  background-color: transparent;
 }
 .navbar-default,
 .navbar-inverse {

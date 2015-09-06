@@ -3,6 +3,8 @@
 
 body {
 	overflow-x: hidden;
+	// background-color: #ffffff;
+	background-image: url("../img/back_sample.png");
 }
 
 p {
@@ -88,8 +90,8 @@ header {
 @media(min-width:768px) {
 	header {
 		.container {
-			padding-top: 320px;
-			padding-bottom: 290px;
+			padding-top: 330px;
+			padding-bottom: 300px;
 		}
 	}
 }
@@ -150,6 +152,24 @@ header {
 			}
 		}
 	}
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: @navigation-highlighted;
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: @navigation-highlighted;
+  background-color: @navigation-back-highlighted;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: @navigation-highlighted;
+  background-color: transparent;
 }
 
 .navbar-default,
