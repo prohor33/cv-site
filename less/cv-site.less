@@ -1,0 +1,101 @@
+@import "variables.less";
+@import "mixins.less";
+
+#grass {
+	position: absolute;
+	background-image: url("../img/grass.png");
+	border-style: none;
+	height: 49px;
+	width: 100%;
+	z-index: -2;
+}
+
+.carousel {
+    margin-top: 20px;
+}
+.carousel .item img {
+    margin: 0 auto; /* Align slide image horizontally center */
+}
+
+@indicator-size: 24px;
+@indicator-inner-size: 14px;
+@indicator-margin: 8px;
+
+.carousel-indicators {
+	margin-bottom: -80px;
+}
+
+.carousel-indicators li {
+	width: @indicator-inner-size;
+  height: @indicator-inner-size;
+  margin-left: @indicator-margin;
+  margin-right: @indicator-margin;
+}
+
+.carousel-indicators .active {
+  width: @indicator-inner-size;
+  height: @indicator-inner-size;
+  margin-left: @indicator-margin;
+  margin-right: @indicator-margin;
+  background-color: black;
+}
+
+ .carousel-indicators-inner {
+	position: relative;
+	width: @indicator-size;
+  height: @indicator-size;
+	border-radius: 50%;
+	margin: (-@indicator-size + @indicator-inner-size) / 2 - 1 (-@indicator-size + @indicator-inner-size) / 2 - 1;
+	border-radius: @indicator-size;
+	border: 1px solid black;
+}
+
+.carousel {
+	width: 500px;
+	margin-top: 70px;
+}
+
+#useCarousel {
+	margin-left: 100px;
+}
+
+.carousel-control.left {
+	background-image: none;
+}
+.carousel-control.right {
+	background-image: none;
+}
+
+@carousel-arrow-size: 50px;
+
+// .glyphicon {
+// 	width: @carousel-arrow-size;
+// 	height: @carousel-arrow-size;
+// }
+
+	.carousel-control .glyphicon-chevron-left {
+		width: @carousel-arrow-size / 2;
+		height: @carousel-arrow-size / 2;
+	}
+
+.glyphicon-chevron-left {
+	background-image: url("../img/carousel_arrow.png");
+	.scale(@ratio_x: -1, @ratio_y: 1);
+}
+.glyphicon-chevron-right {
+	background-image: url("../img/carousel_arrow.png");
+}
+
+@media screen and (min-width: 768px) {
+	.carousel-control .glyphicon-chevron-left,
+	.carousel-control .glyphicon-chevron-right {
+		width: @carousel-arrow-size;
+		height: @carousel-arrow-size;
+	}
+}
+
+.glyphicon-chevron-left:before,
+.glyphicon-chevron-right:before {
+	content: "";
+}
+

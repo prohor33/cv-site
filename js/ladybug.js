@@ -86,7 +86,7 @@ document.onmousemove = function(e) {
   dy = y - parseFloat(cursorY);
   r = Math.sqrt(dx * dx + dy * dy);
   // console.log("r = " + r);
-  bug_r = 67;
+  bug_r = 35;
   if (r < bug_r) {
     ladybugOnEnter();
   }    
