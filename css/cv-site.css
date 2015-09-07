@@ -2,7 +2,6 @@
   position: absolute;
   background-image: url("../img/grass.png");
   border-style: none;
-  /*background-color: #F00;*/
   height: 49px;
   width: 100%;
   z-index: -2;
@@ -42,6 +41,7 @@
 .carousel {
   width: 500px;
   margin-top: 70px;
+  margin-bottom: 95px;
 }
 #useCarousel {
   margin-left: 100px;
@@ -76,4 +76,39 @@
 .glyphicon-chevron-left:before,
 .glyphicon-chevron-right:before {
   content: "";
+}
+.project-text {
+  width: 60%;
+  margin-left: 5%;
+}
+.project-title {
+  font-size: 130%;
+  font: "Myriad";
+  margin: auto;
+  text-align: center;
+  color: #6ea42d;
+}
+.project-description {
+  font-size: 100%;
+  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.project-collaborators {
+  margin: auto;
+  font-weight: bold;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #AAAAAA;
+  margin: 1em 0;
+  padding: 0;
+}
+.googleplay-btn {
+  background-image: url("../img/google_play_btn.jpg");
+  width: 40%;
+  height: 40%;
+  margin: auto;
 }

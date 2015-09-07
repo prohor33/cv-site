@@ -53,6 +53,7 @@
 .carousel {
 	width: 500px;
 	margin-top: 70px;
+	margin-bottom: 95px;
 }
 
 #useCarousel {
@@ -73,10 +74,10 @@
 // 	height: @carousel-arrow-size;
 // }
 
-	.carousel-control .glyphicon-chevron-left {
-		width: @carousel-arrow-size / 2;
-		height: @carousel-arrow-size / 2;
-	}
+.carousel-control .glyphicon-chevron-left {
+	width: @carousel-arrow-size / 2;
+	height: @carousel-arrow-size / 2;
+}
 
 .glyphicon-chevron-left {
 	background-image: url("../img/carousel_arrow.png");
@@ -97,5 +98,48 @@
 .glyphicon-chevron-left:before,
 .glyphicon-chevron-right:before {
 	content: "";
+}
+
+// all together
+.project-text {
+	width: 60%;
+	margin-left: 5%;
+}
+
+.project-title {
+	font-size: 130%;
+	font: "Myriad";
+	margin: auto;
+	text-align: center;
+	color: @text-green-color;
+}
+
+.project-description {
+	font-size: 100%;
+	margin: auto;
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
+.project-collaborators {
+	margin: auto;
+	font-weight: bold;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #AAAAAA;
+    margin: 1em 0;
+    padding: 0;
+    // background-color: #AAAAAA;
+}
+
+.googleplay-btn {
+	background-image: url("../img/google_play_btn.jpg");
+	width: 40%;
+	height: 40%;
+	margin: auto;
 }
 
