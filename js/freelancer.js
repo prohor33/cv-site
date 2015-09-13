@@ -35,3 +35,13 @@ $('body').scrollspy({
 $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
+
+$(function() {
+    $('body').on('click', '.page-scroll-to-project a', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top - 90
+        }, 1500, 'easeInOutExpo');
+        event.preventDefault();
+    });
+});

@@ -103,7 +103,6 @@
 }
 
 // all together
-
 .project-text {
 	width: 60%;
 	margin-left: auto;
@@ -157,4 +156,50 @@ hr {
   // .drop-shadow(@x: 0px; @y: 0px; @blur: 2px; @spread: 2px; @alpha: 0.45);
   .drop-shadow(@x: 0px; @y: 0px; @blur: 2px; @spread: 1px);
 }
+
+.arrow_next {
+	position: absolute;
+	background-image: url("../img/arrow_next.png");
+	width: 50px;
+	height: 60px;
+	margin-top: 50px;
+	margin-left: 40%;
+}
+.arrow_next_right {
+	.arrow_next;
+}
+.arrow_next_left {
+	.arrow_next;
+	margin-top: -80px;
+	margin-left: 43%;
+}
+
+.arrow_next_left:hover {
+	background-image: url("../img/arrow_next_hover.gif");
+	width: 50px;
+	height: 150px;
+	margin-top: -170px;
+}
+
+.arrow_next_right:hover {
+	background-image: url("../img/arrow_next_hover.gif");
+	width: 50px;
+	height: 150px;
+	margin-top: -40px;
+}
+
+/*Important:*/
+.link-spanner{
+  position:absolute; 
+  width:100%;
+  height:100%;
+  top:0;
+  left: 0;
+  z-index: 1;
+
+  /* edit: fixes overlap error in IE7/8, 
+     make sure you have an empty gif 
+  background-image: url('empty.gif');*/
+} 
+
 
