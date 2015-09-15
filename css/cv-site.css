@@ -81,9 +81,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-.project-text-right {
-  margin-left: 5%;
-}
 .project-text-left {
   margin-right: 5%;
 }
@@ -123,42 +120,19 @@ hr {
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.25);
 }
 .arrow_next {
-  position: absolute;
+  position: relative;
   background-image: url("../img/arrow_next.png");
   width: 50px;
   height: 60px;
-  margin-top: 50px;
-  margin-left: 40%;
+  margin-left: auto;
+  margin-top: auto;
+  margin-right: 50px;
+  margin-bottom: 40px;
 }
-.arrow_next_right {
-  position: absolute;
-  background-image: url("../img/arrow_next.png");
-  width: 50px;
-  height: 60px;
-  margin-top: 50px;
-  margin-left: 40%;
-}
-.arrow_next_left {
-  position: absolute;
-  background-image: url("../img/arrow_next.png");
-  width: 50px;
-  height: 60px;
-  margin-top: 50px;
-  margin-left: 40%;
-  margin-top: -80px;
-  margin-left: 43%;
-}
-.arrow_next_left:hover {
+.arrow_next:hover {
   background-image: url("../img/arrow_next_hover.gif");
-  width: 50px;
   height: 150px;
   margin-top: -170px;
-}
-.arrow_next_right:hover {
-  background-image: url("../img/arrow_next_hover.gif");
-  width: 50px;
-  height: 150px;
-  margin-top: -40px;
 }
 /*Important:*/
 .link-spanner {
