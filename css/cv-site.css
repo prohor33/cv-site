@@ -77,9 +77,12 @@
   content: "";
 }
 .project-text {
-  width: 60%;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
+}
+.project-text-right {
+  margin-left: 5%;
 }
 .project-text-left {
   margin-right: 5%;
@@ -111,10 +114,11 @@ hr {
 }
 .googleplay-btn {
   background-image: url("../img/google_play_btn.jpg");
-  width: 40%;
-  height: 40%;
+  width: 150px;
+  height: 52px;
   display: block;
-  margin-left: 22%;
+  margin-left: auto;
+  margin-right: auto;
   -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.25);
@@ -124,7 +128,7 @@ hr {
   background-image: url("../img/arrow_next.png");
   width: 50px;
   height: 60px;
-  margin-left: auto;
+  margin-left: -100px;
   margin-top: auto;
   margin-right: 50px;
   margin-bottom: 40px;
