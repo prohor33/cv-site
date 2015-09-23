@@ -10,9 +10,6 @@
 	z-index: -2;
 }
 
-.carousel {
-    margin-top: 20px;
-}
 .carousel .item img {
     margin: 0 auto; /* Align slide image horizontally center */
 }
@@ -103,10 +100,19 @@
 }
 
 // all together
+.project-text-container {
+	position: relative;
+	height: 692px;
+	margin: 0px;
+}
+
 .project-text {
-	width: 70%;
-	margin-left: auto;
-	margin-right: auto;
+	// margin-top: auto;
+	// margin-bottom: auto;
+	// right: 0;
+	position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .project-text-right {
@@ -159,14 +165,13 @@ hr {
 }
 
 .arrow_next {
-	position: relative;
+	position: absolute;
+	// display: block;
 	background-image: url("../img/arrow_next.png");
 	width: 50px;
 	height: 60px;
-	margin-left: -100px;
-	margin-top: auto;
-	margin-right: 50px;
-	margin-bottom: 40px;
+	bottom: 0;
+	right: -100px;
 }
 
 .arrow_next:hover {
@@ -188,5 +193,6 @@ hr {
      make sure you have an empty gif 
   background-image: url('empty.gif');*/
 } 
+
 
 
