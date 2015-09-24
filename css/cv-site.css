@@ -6,6 +6,10 @@
   width: 100%;
   z-index: -2;
 }
+.grass {
+  height: 49px;
+  background-image: url("../img/grass.png");
+}
 .carousel .item img {
   margin: 0 auto;
   /* Align slide image horizontally center */
