@@ -137,13 +137,12 @@ hr {
   background-image: url("../img/arrow_next.png");
   width: 50px;
   height: 60px;
-  bottom: 0;
-  right: -100px;
+  bottom: 40px;
+  right: 70px;
 }
 .arrow_next:hover {
   background-image: url("../img/arrow_next_hover.gif");
   height: 150px;
-  margin-top: -170px;
 }
 /*Important:*/
 .link-spanner {
@@ -156,4 +155,8 @@ hr {
   /* edit: fixes overlap error in IE7/8, 
      make sure you have an empty gif 
   background-image: url('empty.gif');*/
+}
+.project-container {
+  width: 100%;
+  position: relative;
 }
