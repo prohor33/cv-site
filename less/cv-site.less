@@ -45,7 +45,6 @@
 	position: relative;
 	width: @indicator-size;
   height: @indicator-size;
-	border-radius: 50%;
 	margin: (-@indicator-size + @indicator-inner-size) / 2 - 1 (-@indicator-size + @indicator-inner-size) / 2 - 1;
 	border-radius: @indicator-size;
 	border: 1px solid black;
@@ -111,16 +110,15 @@
 }
 
 .project-text {
-	// margin-top: auto;
-	// margin-bottom: auto;
-	// right: 0;
 	position: absolute;
   top: 50%;
   .transform(@string:translateY(-50%));
 }
 
-.project-text-right {
-	margin-left: 5%;
+@media screen and (min-width: 768px) {
+	.project-text-right {
+		margin-left: 100px;
+	}
 }
 
 .project-text-left {
