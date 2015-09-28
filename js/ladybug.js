@@ -2,13 +2,21 @@ window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequest
 
 bug = document.getElementById("ladybug");
 header = document.getElementById("header");
-bug.style.left = "350px";
+// bug.style.left = "350px";
 bug.style.top = "10px";
+bug.style.left = "350px";
+// bug.style.top = "4000px";
 
 dir_x = 1.0;
 dir_y = 0.0;
+
+// v = 1;
+// alpha_v = 0.007;
+// change_alpha_v_prob = 0.1;
+
 v = 0.1;
 alpha_v = 0.001;
+change_alpha_v_prob = 0.01;
 alpha_dir = 1;
 prev_time_stamp = null;
 stopped = false;
@@ -34,23 +42,45 @@ function step(timestamp) {
     y += dir_y * v * dt;
   }
 
-  bug.style.left = x + "px";
-  bug.style.top = y + "px";
-
   alpha = Math.atan2(dir_y, dir_x);
-  // d_alpha = (Math.random() - 0.5) * alpha_v * dt;
 
-  forvard_r = 150;
-  forv_x = x + w / 2.0 + dir_x * forvard_r;
-  forv_y = y + h / 2.0 + dir_y * forvard_r;
-  to_the_corner = false;
-  if (forv_x < 0 || forv_y < 0 || forv_x > window.innerWidth || forv_y > document.innerHeight) {
-    to_the_corner = true;
-    console.log("to_the_corner");
+  // forvard_r = 150;
+  // forv_x = x + w / 2.0 + dir_x * forvard_r;
+  // forv_y = y + h / 2.0 + dir_y * forvard_r;
+  // console.log("x = " + x);
+  // console.log("y = " + y);
+  // console.log("window.innerWidth = " + window.innerWidth);
+  // console.log("document.innerHeight = " + getDocumentHeight());
+
+  var dead_zone = 50;
+  var in_dead_zone = false;
+  var punch = 10;
+
+  if (x < dead_zone) {
+    x = dead_zone + punch;
+    in_dead_zone = true;
+  }
+  if (y < -200) {
+    y = -200 + punch;
+    in_dead_zone = true;
+  }
+  if (x > (getDocumentWidth() - dead_zone)) {
+    x = getDocumentWidth() - dead_zone - punch;
+    in_dead_zone = true;
+  }
+  if (y > (getDocumentHeight() - dead_zone)) {
+    y = getDocumentHeight() - dead_zone - punch;
+    in_dead_zone = true;
   }
 
-  if (!to_the_corner && Math.random() < 0.01)
+  if (in_dead_zone) {
+    // console.log("in_dead_zone");
+    alpha += Math.PI; // turn around
+  }
+
+  if (Math.random() < change_alpha_v_prob)
     alpha_dir *= -1;
+
   d_alpha = alpha_v * dt * alpha_dir;
   if (!stopped)
     alpha += d_alpha;
@@ -63,6 +93,9 @@ function step(timestamp) {
   bug.style.msTransform     = 'rotate('+alpha_deg+'deg)';
   bug.style.oTransform      = 'rotate('+alpha_deg+'deg)';
   bug.style.transform       = 'rotate('+alpha_deg+'deg)';
+
+  bug.style.left = x + "px";
+  bug.style.top = y + "px";
 
   requestAnimationFrame(step);
 }
@@ -104,5 +137,27 @@ function ladybugOnEnter(obj) {
 function ladybugOnLeave(obj) {
   stopped = false;
   bug.style.backgroundImage = 'url(img/ladybug.gif)';
+}
+
+var documentHeight = 0;
+function getDocumentHeight() {
+  if (documentHeight > 0)
+    return documentHeight;
+  var body = document.body,
+    html = document.documentElement;
+
+  documentHeight = Math.max(body.scrollHeight, body.offsetHeight, 
+                        html.clientHeight, html.scrollHeight, html.offsetHeight) - 400;
+  return documentHeight;
+}
+function getDocumentWidth() {
+  return window.innerWidth - 200;
+}
+
+// body.addEventListener("load", init(), false);
+$(document).ready(init);
+
+function init() {
+  documentHeight = 0;
 }
 
