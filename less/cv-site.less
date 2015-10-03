@@ -15,7 +15,21 @@
 }
 
 .carousel .item img {
-    margin: 0 auto; /* Align slide image horizontally center */
+  margin: 0 auto; /* Align slide image horizontally center */
+}
+
+@media screen and (max-width: 768px) {
+	.carousel-inner > .item > img,
+	.carousel-inner > .item > a > img {
+		width: 50%;
+		height: 50%;
+		// margin: 0px;
+		// padding: 0px;
+	}
+	// .carousel-inner > .item {
+	// 	padding: 0px;
+	// 	margin: 0px;
+	// }
 }
 
 @indicator-size: 24px;
@@ -62,6 +76,22 @@
 // 	margin-left: 100px;
 // }
 
+@media screen and (max-width: 768px) {
+	// .carousel-control.left {
+	// 	padding: 0px;
+	// 	margin: 0px;
+	// 	width: 0px;
+	// }
+	// .carousel-control.right {
+	// 	padding: 0px;
+	// 	margin: 0px;
+	// }
+	// .item {
+	// 	margin: 0px;
+	// 	padding: 0px;
+	// }
+}
+
 .carousel-control.left {
 	background-image: none;
 	filter: none;
@@ -78,9 +108,10 @@
 // 	height: @carousel-arrow-size;
 // }
 
-.carousel-control .glyphicon-chevron-left {
-	width: @carousel-arrow-size / 2;
-	height: @carousel-arrow-size / 2;
+.carousel-control .glyphicon-chevron-left,
+.carousel-control .glyphicon-chevron-right {
+	width: @carousel-arrow-size;
+	height: @carousel-arrow-size;
 }
 
 .glyphicon-chevron-left {
@@ -89,14 +120,6 @@
 }
 .glyphicon-chevron-right {
 	background-image: url("../img/carousel_arrow.png");
-}
-
-@media screen and (min-width: 768px) {
-	.carousel-control .glyphicon-chevron-left,
-	.carousel-control .glyphicon-chevron-right {
-		width: @carousel-arrow-size;
-		height: @carousel-arrow-size;
-	}
 }
 
 .glyphicon-chevron-left:before,
@@ -181,6 +204,12 @@ hr {
 .arrow_next:hover {
 	background-image: url("../img/arrow_next_hover.gif");
 	height: 150px;
+}
+
+@media screen and (max-width: 768px) {
+	.arrow_next {
+		display: none;
+	}
 }
 
 /*Important:*/
