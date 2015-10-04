@@ -52,6 +52,11 @@
   margin-left: auto;
   margin-right: auto;
 }
+@media screen and (max-width: 768px) {
+  .carousel {
+    width: 350px;
+  }
+}
 .carousel-control.left {
   background-image: none;
   filter: none;
@@ -168,4 +173,20 @@ hr {
 .project-container {
   width: 100%;
   position: relative;
+}
+.border_l {
+  width: 5px;
+  height: 1000px;
+}
+.border_r {
+  width: 5px;
+  height: 1000px;
+}
+.border_t {
+  width: 1000px;
+  height: 5px;
+}
+.border_b {
+  width: 1000px;
+  height: 5px;
 }

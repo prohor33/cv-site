@@ -2,10 +2,8 @@ window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequest
 
 bug = document.getElementById("ladybug");
 header = document.getElementById("header");
-// bug.style.left = "350px";
-bug.style.top = "10px";
+bug.style.top = "300px";
 bug.style.left = "350px";
-// bug.style.top = "4000px";
 
 dir_x = 1.0;
 dir_y = 0.0;
@@ -20,6 +18,15 @@ change_alpha_v_prob = 0.01;
 alpha_dir = 1;
 prev_time_stamp = null;
 stopped = false;
+
+border_l = document.getElementById("border_l");
+border_r = document.getElementById("border_r");
+border_t = document.getElementById("border_t");
+border_b = document.getElementById("border_b");
+ladybug_point = document.getElementById("ladybug_point");
+navbar = document.getElementsByClassName("navbar")[0];
+navbar_height = parseFloat(navbar.offsetHeight);
+console.log("navbar_height = " + navbar.offsetHeight);
 
 
 function step(timestamp) {
@@ -52,24 +59,40 @@ function step(timestamp) {
   // console.log("window.innerWidth = " + window.innerWidth);
   // console.log("document.innerHeight = " + getDocumentHeight());
 
-  var dead_zone = 50;
+  var dead_zone = 10;
   var in_dead_zone = false;
   var punch = 10;
 
-  if (x < dead_zone) {
-    x = dead_zone + punch;
+  var min_x = dead_zone;
+  var min_y = dead_zone + navbar_height;
+  var max_x = getDocumentWidth() - dead_zone;
+  var max_y = getDocumentHeight() - dead_zone;
+
+  // console.log("min_x = " + min_x);
+  // console.log("min_y = " + min_y);
+  // console.log("max_x = " + max_x);
+  // console.log("max_y = " + max_y);
+
+  // // for debug
+  // border_l.style.left = min_x + "px";
+  // border_r.style.left = max_x + "px";
+  // border_t.style.top = min_y + "px";
+  // border_b.style.top = max_y + "px";
+
+  if (x < min_x) {
+    x = min_x;
     in_dead_zone = true;
   }
-  if (y < -200) {
-    y = -200 + punch;
+  if (y < min_y) {
+    y = min_y;
     in_dead_zone = true;
   }
-  if (x > (getDocumentWidth() - dead_zone)) {
-    x = getDocumentWidth() - dead_zone - punch;
+  if (x > max_x) {
+    x = max_x;
     in_dead_zone = true;
   }
-  if (y > (getDocumentHeight() - dead_zone)) {
-    y = getDocumentHeight() - dead_zone - punch;
+  if (y > max_y) {
+    y = max_y;
     in_dead_zone = true;
   }
 
@@ -96,6 +119,10 @@ function step(timestamp) {
 
   bug.style.left = x + "px";
   bug.style.top = y + "px";
+
+  // // for debug
+  // ladybug_point.style.left = x + "px";
+  // ladybug_point.style.top = y + "px";
 
   requestAnimationFrame(step);
 }
@@ -147,11 +174,11 @@ function getDocumentHeight() {
     html = document.documentElement;
 
   documentHeight = Math.max(body.scrollHeight, body.offsetHeight, 
-                        html.clientHeight, html.scrollHeight, html.offsetHeight) - 400;
+                        html.clientHeight, html.scrollHeight, html.offsetHeight) - 100;
   return documentHeight;
 }
 function getDocumentWidth() {
-  return window.innerWidth - 200;
+  return window.innerWidth;
 }
 
 // body.addEventListener("load", init(), false);

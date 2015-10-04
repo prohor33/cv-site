@@ -20,3 +20,43 @@
 		width: 75px;
 	}
 }
+
+/* for debug */
+#border_l {
+	top: 0px;
+	position: absolute;
+	width: 5px;
+	height: 2000px;
+	background-color: blue;
+}
+
+#border_r {
+	position: absolute;
+	top: 0px;
+	width: 5px;
+	height: 2000px;
+	background-color: blue;
+}
+
+#border_t {
+	left: 0px;
+	position: absolute;
+	width: 2000px;
+	height: 5px;
+	background-color: blue;
+}
+
+#border_b {
+	left: 0px;
+	position: absolute;
+	width: 2000px;
+	height: 5px;
+	background-color: blue;
+}
+
+#ladybug_point {
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background-color: green;
+}
