@@ -26,7 +26,7 @@ border_b = document.getElementById("border_b");
 ladybug_point = document.getElementById("ladybug_point");
 navbar = document.getElementsByClassName("navbar")[0];
 navbar_height = parseFloat(navbar.offsetHeight);
-console.log("navbar_height = " + navbar.offsetHeight);
+// console.log("navbar_height = " + navbar.offsetHeight);
 
 
 function step(timestamp) {
