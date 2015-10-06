@@ -157,7 +157,7 @@ document.onmousemove = function(e) {
 
 function ladybugOnEnter(obj) {
   stopped = true;
-  console.log("ladybugOnEnter");
+  // console.log("ladybugOnEnter");
   bug.style.backgroundImage = 'url(img/ladybug_looking.gif)';
 }
 
